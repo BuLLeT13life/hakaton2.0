@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='JavsScript/script.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<title>Загрузка фото </title>
+</head>
+<header>
+ <nav class="sticky">
+    <ul>
+     <li><a href="/">Главная</a></li>
+      <li><a href="/upload">Реализация</a></li>
+      <li><a href="/check_photo">Проверка фото</a></li>
+        <li><a href="/avtore">Об авторах</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+<div class="upload_photo">
+    <div class="batton">
+        <form  action="/check_photo" method="post" enctype="multipart/form-data">
+            <input class="file" type="file" name="file2">
+            <input class="sumbit" type="submit" value="Upload">
+        </form>
+    </div>
+
+</div>
+    <footer>
+       <p> CyberBeats 2023</p>
+    </footer>
+
+</body>
+</html>

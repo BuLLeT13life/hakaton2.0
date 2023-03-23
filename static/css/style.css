@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+nav {
+  background-color: #333;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero {
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.hero-text {
+  border-right: solid 3px rgba(227, 211, 211);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 28px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Animation */
+.hero-text {
+  animation: animated-text 4s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 710px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(227, 211, 211);}
+  to{border-right-color: transparent;}
+}
+
+
+
+
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.content p {
+  max-width: 800px;
+  font-family: 'Montserrat', sans-serif;
+font-size: 1.2rem;
+font-weight: 400;
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: #333333;
+text-align: justify;
+text-justify: inter-word;
+text-decoration: none;
+text-transform: none;
+text-shadow: none;
+text-indent: 0;
+margin: 0;
+padding: 0;
+
+
+}
+
+a:hover{
+  color: red;
+}
+
+.upload_photo{
+
+  padding-top: 300px;
+  height: 100vh;
+  background-color: #ffdbb6;
+
+
+
+}
+.tetxt_upload{
+
+  padding-left:100px;
+
+}
+.tetxt_upload p {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+
+    font-weight: bold;
+
+
+}
+
+.photo_upload{
+    padding-top:100px;
+}
+
+.upload_photo2{
+
+    display:flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffdbb6;
+    padding-top:200px;
+
+}
+.upload_photo2 p {
+
+   font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.batton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.file {
+    padding: 10px 15px;
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+.submit {
+    padding: 10px 15px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+.file:hover, .submit:hover {
+    background-color: #555;
+  }
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.container figure {
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+.text_avtor{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+    color: #000000;
+    font-size: 48px;
+    font-family: ‘Signika’, sans-serif;
+    padding-bottom: 10px;
+
+}
+
+figcaption {
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "Bookman Old Style";
+}
+
+footer{
+  height: 40px;
+  background-color: black;
+  width: 100%;
+}
+
+footer p {
+  padding-top: 10px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Ebrima;
+
+}
+.rrr{
+
+    padding-top: 300px;
+  height: 100vh;
+  background-color: #ffdbb6;
+ }
+ .rrr p {
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
+
+ }

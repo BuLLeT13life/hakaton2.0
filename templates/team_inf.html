@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='JavsScript/script.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<title>Загрузка фото </title>
+</head>
+<header>
+ <nav class="sticky">
+    <ul>
+     <li><a href="/">Главная</a></li>
+      <li><a href="/upload">Реализация</a></li>
+      <li><a href="/check_photo">Проверка фото</a></li>
+        <li><a href="/avtore">Об авторах</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+
+<div class="upload_photo">
+    <div class="text_avtor">
+
+           <h4> Наша команда из ВКА имени "Можайского"</h4>
+
+    </div>
+    <div class="container">
+        <figure>
+            <img src="" alt="">
+            <figcaption>Лебедев Егор</figcaption>
+        </figure>
+        <figure>
+            <img src="static/photos_css/" alt="">
+            <figcaption>Козлов Виктор</figcaption>
+        </figure>
+        <figure>
+            <img src="static/photos_css/astronaut.jpg" alt="">
+            <figcaption>Мандрица Михаил</figcaption>
+        </figure>
+        <figure>
+            <img src="static/photos_css/astronaut.jpg" alt="">
+            <figcaption>Бойков Даниил</figcaption>
+        </figure>
+        </div>
+</div>
+    <footer>
+       <p> CyberBeats 2023</p>
+    </footer>
+
+</body>
+</html>
