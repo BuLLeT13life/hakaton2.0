@@ -5,7 +5,23 @@ import sys
 import io
 
 #нанесение водяного знака на изображение
+
+def change_jpg_to_png(path_to_photo):
+    base_img = Image.open(path_to_photo).convert('RGB')
+    png_image_path = os.path.splitext(path_to_photo)[0] + '.png'
+
+    print(png_image_path)
+
+    base_img.save(png_image_path)
+    Image_png = Image.open(png_image_path)
+
+    print(Image_png)
+
+    return png_image_path
+
 def stamp_watermark (pathimgin, pathimgout, codephrase):
+
+    print(pathimgin)
 
 
     base_img = Image.open(pathimgin).convert('RGBA')
@@ -24,14 +40,14 @@ def stamp_watermark (pathimgin, pathimgout, codephrase):
 
     #размножение водяного знака
     WW, WH = WMark.size
-    for i in range(0,width // WW + 1 ):
-        for j in range (0,height // WH + 1):
+    for i in range(0, width // WW + 1 ):
+        for j in range(0, height // WH + 1):
             transparent.paste(WMark, (i * WW, j * 2 * WH), mask=WMark)
     transparent.save(pathimgout)
 
-if __name__ == '__main__':
 
-    stamp_watermark("image.jpg","imageOut.png", var)
+
+
 
 
 

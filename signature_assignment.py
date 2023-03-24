@@ -64,9 +64,6 @@ def assign_digital_signature(img):
 
     return signature, pem
 
-def connect_to_database():
-    pass
-
 
 def check_signature(signature, pem, img):
 

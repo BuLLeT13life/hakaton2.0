@@ -2,12 +2,12 @@ import flask
 from flask import Flask, request, redirect, url_for , flash
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
-from main import assign_digital_signature , check_signature
+from signature_assignment import assign_digital_signature , check_signature
 import os
 import sqlite3
 import random, string
 from PIL import Image
-from WMarkStamp import stamp_watermark
+from WMarkStamp import stamp_watermark, change_jpg_to_png
 
 
 app = Flask(__name__)
@@ -34,7 +34,8 @@ def upload_file_check():
         if file:
             # создаем безопасное имя файла
             filename = secure_filename(file.filename)
-            # сохраняем файл в папку uploads на сервере
+            # сохраняем файл в папку photos на сервере
+
             file.save('static/photos_check/' + filename)
 
             return flask.redirect(url_for('check_photo2', filename=filename))
@@ -51,7 +52,10 @@ def upload_file():
         if file:
             # создаем безопасное имя файла
             filename = secure_filename(file.filename)
-            # сохраняем файл в папку uploads на сервере
+            # сохраняем файл в папку photos на сервере
+            filename = os.path.splitext(filename)[0] + '.png'
+
+
             file.save('static/photos/' + filename)
             return flask.redirect(url_for('uploaded_file', filename=filename))
 
@@ -63,6 +67,8 @@ def uploaded_file(filename):
     random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=7))
 
     print(f'static/photos/{filename}')
+
+    filename = os.path.splitext(filename)[0] + '.png'
 
     stamp_watermark(f'static/photos/{filename}', 'static/photos_water_marks/' + filename, random_id)
 
@@ -102,8 +108,15 @@ def check_photo2(filename):
         photo_blob = str(photo_blob)
         without_key_and_signature = photo_blob.split("-----BEGIN PUBLIC KEY-----")[1]
         key = without_key_and_signature.split("-----END PUBLIC KEY-----")[1]
+        print(photo_blob)
+        print(key)
+        print(without_key_and_signature)
+
+
         query = f"SELECT photo_with_added_features FROM database_hakaton WHERE photo_with_added_features = ?"
         cursor.execute(query, (photo_blob, ))
+
+
         return flask.render_template('show_check_photo.html', filename=filename)
 
     except:
