@@ -11,7 +11,7 @@ from WMarkStamp import stamp_watermark
 
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
 
 
 @app.route('/')
@@ -22,7 +22,7 @@ def index():
 
 @app.route('/avtore')
 def avtors():
-    flash('Вы успешно вошли в систему')
+
     return flask.render_template('team_inf.html')
 
 
@@ -83,7 +83,8 @@ def uploaded_file(filename):
         connection.commit()
     except Exception as ex:
 
-        return flask.render_template('error.html')
+        return flask.render_template('error_photo.html')
+
 
     return flask.render_template('download.html', filename=filename)
 
